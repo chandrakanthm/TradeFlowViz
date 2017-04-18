@@ -28,17 +28,17 @@ urls = ["http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,20
 def fetch_url(url, i):
     file_name = "file_"+countrylist[i]+".json"
     file_list.append(file_name)
-#    response = requests.get(url, verify=False)
-#    data = response.json()
-#    if not os.path.isfile("./"+file_name):
-#        with open(file_name, 'w') as outfile:
-#            json.dump(data["dataset"], outfile)
-#        print "'%s\' fetched in %ss" % (url, (time.time() - start))
+    response = requests.get(url, verify=False)
+    data = response.json()
+    if not os.path.isfile("./"+file_name):
+        with open(file_name, 'w') as outfile:
+            json.dump(data["dataset"], outfile)
+        print "'%s\' fetched in %ss" % (url, (time.time() - start))
     
 threads = [threading.Thread(target=fetch_url, args=(urls[i],i,)) for i in range(0,len(urls)) ]
 for thread in threads:
     thread.start()
-    time.sleep(1)
+    time.sleep(12)
 for thread in threads:
     thread.join()
     
