@@ -1,0 +1,219 @@
+<html>
+    <head>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <link href="./nvd3/build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="./nvd3/build/nv.d3.min.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>-->
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script type="text/javascript">
+        
+        
+        //============
+      
+        //==============
+        var yearTable = ["2011","2012","2013","2014","2015","2016"]
+        var countrylist = ["brazil","canada","china","france","germany","india","mexico","russia","uk","us"]
+        //var countryCode = ["76","124","156","251","278","344","699","381","392","484","643","784","826","834"]
+        var dataTable = {"Gold":"284330","crude":"150810","coffee":"09","wheat":"1109","cotton":"52","corn":"071040","sugar":"17","silver":"28432","copper":"7406"};
+        var countryTable = {"brazil":"76","canada":"124","china":"156", "france":"251"," germany":"278","india":"699","mexico":"484","russia":"643","uk":"826","us":"834"};
+        var countryCode = ["76","124","156","251","278","699","484","643","826","834"]
+//        var countryTable = {"brazil":"76","canada":"124","china":"156", "france":"251"," germany":"278","hongkong":"344","india":"699","italy":"381","japan":"392","mexico":"484","russia":"643","uae":"784","uk":"826","us":"826"};
+        
+        function getData() {
+    
+                   var data_json;
+                   call_back_bar("json data to be provided ");
+        
+        }
+        
+        function call_back_bar(data_json){
+            //alert(data_json);
+            var barData = bar_data(data_json);
+            console.log(barData);
+            nv.addGraph(function() {
+            var chart = nv.models.discreteBarChart()
+                  .x(function(d) { return d.year })    //Specify the data accessors.
+                  .y(function(d) { return d.value })
+                  .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
+                  //.tooltips(false)        //Don't show tooltips
+                  .showValues(true)       //...instead, show the bar value right on top of each bar.
+                  ;
+
+              d3.select('#chart svg')
+                  .datum(barData)
+                  .call(chart);
+
+              nv.utils.windowResize(chart.update);
+
+              return chart;
+            }); 
+        }
+        
+        
+        function call_back(data_json){
+            //alert(data_json);
+            var pieData = pie_data(data_json);
+            console.log(pieData);
+            nv.addGraph(function() {
+              var chart = nv.models.pieChart()
+                  .x(function(d) { return d.year })
+                  .y(function(d) { return d.value })
+                  .showLabels(true);
+
+            d3.select("#chart svg")
+                    .datum(pieData)
+                    .transition().duration(350)
+                    .call(chart);
+
+              return chart;
+            });  
+        }
+        
+        function getFirstCountry(code){
+            for(var key in countryTable){
+                if(key == code)
+                    return countryTable[key];
+            }
+            return null;
+        }
+        function getSecCountry(code){
+            for(var key in countryTable){
+                if(key == code)
+                    return countryTable[key];
+            }
+            return null;
+        }
+        function getItem(code){
+            for(var key in dataTable){
+                if(key == code)
+                    return dataTable[key];
+            }
+            return null;
+        }
+        
+        function bar_data(dataset){
+            var bar_arr = new Array();
+            var bar_data = new Object();
+            bar_data.key = "Data trend ";
+            var data_arr = new Array();
+            alert("coming here");
+            for(var i=0; i<dataset.length; i++){
+                alert("coming here "+i);
+                var temp = new Object();
+                alert("dataset : "+dataset[i].period);
+                temp["year"] = dataset[i].period;
+                temp["value"] = dataset[i].TradeValue;
+                data_arr.push(temp);
+            }
+            bar_data.values = data_arr;
+            bar_arr.push(bar_data);
+            return bar_arr;
+        }
+        
+        function pie_data(dataset){
+            var data_arr = new Array();
+            alert("coming here");
+            for(var i=0; i<dataset.length; i++){
+                alert("coming here "+i);
+                var temp = new Object();
+                alert("dataset : "+dataset[i].period);
+                temp["year"] = dataset[i].period;
+                temp["value"] = dataset[i].TradeValue;
+                data_arr.push(temp);
+            }
+
+            return data_arr;
+        }
+    </script>
+    
+    <body>
+        
+        <select id="type">
+                <option value="export">Export</option>
+                <option value="import">Import</option>
+        </select>
+        <br>
+        <label >Country</label>
+        <select id="country1">
+                <option value="defct1">select</option>
+                <option value="brazil">Brazil</option>
+                <option value="china">China</option>
+                <option value="france">France</option>
+                <option value="germany">Germany</option>
+                <option value="hongkong">Hongkong</option>
+                <option value="india">India</option>
+                <option value="italy">Italy</option>
+                <option value="japan">Japan</option>
+                <option value="mexico">Mexico</option>
+                <option value="russia">Russia</option>
+                <option value="uae">UAE</option>
+                <option value="uk">Uk</option>
+                <option value="us">Us</option>
+        </select>
+        <br>
+        <label>Partner Country</label>
+        <select id="country2">
+                <option value="defct2">select</option>
+                <option value="brazil">Brazil</option>
+                <option value="china">China</option>
+                <option value="france">France</option>
+                <option value="germany">Germany</option>
+                <option value="hongkong">Hongkong</option>
+                <option value="india">India</option>
+                <option value="italy">Italy</option>
+                <option value="japan">Japan</option>
+                <option value="mexico">Mexico</option>
+                <option value="russia">Russia</option>
+                <option value="uae">UAE</option>
+                <option value="uk">Uk</option>
+                <option value="us">Us</option>
+        </select>
+        <br>
+        <label>commodity</label>
+        <select id="commodity">
+                <option value="comdty">select</option>
+                <option value="Gold">Gold</option>
+                <option value="crude">crude oil</option>
+                <option value="coffee">coffee</option>
+                <option value="wheat">wheat</option>
+                <option value="cotton">cotton</option>
+                <option value="corn">corn</option>
+                <option value="sugar">sugar</option>
+                <option value="silver">silver</option>
+                <option value="copper">copper</option>
+        </select>
+        
+        <button onclick="getData()">click to download</button>
+        <div id="result" style="color:red"></div>
+        <style>
+
+        #chart svg {
+          height: 400px;
+        }
+
+        </style>
+
+
+        <div id="chart">
+          <svg></svg>
+        </div>
+    </body>
+    
+</html>
+
+
+
+<!--
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+		console.log(this.responseText);
+   }
+};
+xhttp.open("GET", "https://comtrade.un.org/api/refs/da/view?type=C&freq=M&ps=201607&px=HS", true);
+xhttp.send();
+-->
+
+    
