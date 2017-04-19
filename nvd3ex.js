@@ -52,7 +52,6 @@ function stream_index(d, i) {
 
 nv.addGraph(function() {
     var chart = nv.models.multiBarChart();
-
     chart.xAxis
         .tickFormat(d3.format(',f'));
 
