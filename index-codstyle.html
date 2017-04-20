@@ -28,7 +28,12 @@ border-left-color:transparent;
 top: 0px;
 width: 100%;
 z-index: 9999;">
-        <form action="" onsubmit="return false;" method="post">
+        <form name="myForm" action="" method="post">
+            Name:
+            <input type="text" name="fname">
+            <input type="button" value="ss" onclick="imade()">
+        </form>
+        <form action="" name="myForm2" onsubmit="return false;" method="post">
             <div class="row tools">
                 <div class="col-sm-1">
                     <div class="tool radius" style="padding-left: 2rem;">
@@ -41,7 +46,7 @@ z-index: 9999;">
                 <div class="col-sm-1">
                     <div class="tool coordinates">
                         <!-- <h5>Country 2</h5> -->
-                        <input type="name" step="any" style="background: black;color: #1da0e8;" id="coordinates-lng" class="form-control" placeholder="Country2">
+                        <input type="name" step="any" style="background: black;color: #1da0e8;" id="coordinates-lng" name="country2" class="form-control" placeholder="Country2">
                         <!--  <input type="number" step="any" id="coordinates-lat" class="form-control" placeholder="Latitude"> -->
                     </div>
                 </div>

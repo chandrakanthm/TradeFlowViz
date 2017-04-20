@@ -344,8 +344,8 @@ function initScene() {
 
     buildGUI();
 
-    selectVisualization(timeBins, '2010', ['India'], ['Military Weapons', 'Civilian Weapons', 'Ammunition'], ['Military Weapons', 'Civilian Weapons', 'Ammunition']);
-    //selectVisualization( timeBins, '2010', ['India'], ['banana'], ['banana'] );                   
+    // selectVisualization(timeBins, '2010', ['India'], ['Military Weapons', 'Civilian Weapons', 'Ammunition'], ['Military Weapons', 'Civilian Weapons', 'Ammunition']);
+    selectVisualization(timeBins, '2010', ['India'], ['banana'], ['banana']);
 
     // test for highlighting specific countries
     // highlightCountry( ["United States", "Switzerland", "China"] );
@@ -512,6 +512,43 @@ function findCode(countryName) {
             return i;
     }
     return 'not found';
+}
+
+function imade() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    console.log("here");
+    var exporter1 = [{
+        lat: "30",
+        lon: "77",
+        countryCode: "IN",
+        countryName: "INDIA",
+        center: {
+            x: 100.95270837662308,
+            y: 37.13678355502349,
+            z: 37.46860881676518
+        }
+    }];
+    var importer1 = [{
+        lat: "26",
+        lon: "50.55",
+        countryCode: "BH",
+        countryName: "BAHRAIN",
+        center: {
+            x: -7.186102929431766,
+            y: 79.47674899270672,
+            z: 60.264469583975476
+        },
+
+
+    }];
+
+    makeConnectionLineGeometry(exporter, importer, set.v, set.wc);
+
+    // selectVisualization(timeBins, '2010', [x], ['banana'], ['banana']);
 }
 
 //  ordered lookup list for country color index
