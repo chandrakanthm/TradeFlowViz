@@ -34,7 +34,7 @@ def fetch_url(url, i):
 #        with open(file_name, 'w') as outfile:
 #            json.dump(data["dataset"], outfile)
 #        print "'%s\' fetched in %ss" % (url, (time.time() - start))
-    
+#    
 threads = [threading.Thread(target=fetch_url, args=(urls[i],i,)) for i in range(0,len(urls)) ]
 for thread in threads:
     thread.start()
@@ -64,7 +64,10 @@ for k in range(0,len(countrylist)):
                 res_data[a] = []
             if data_json[j]["ptTitle"].lower() not in countrylist:
                 continue
-            b = (data_json[j]["ptTitle"],dataTable[str(data_json[j]["cmdCode"])])
+            b = {}
+            b["country"] = data_json[j]["ptTitle"]
+            b["commodity"] = dataTable[str(data_json[j]["cmdCode"])]
+            b["val"] = data_json[j]["TradeValue"]
             res_data[a].append(b)
 
 
