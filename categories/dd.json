@@ -1,374 +1,314 @@
-{"timeBins": [{"data":
-[
-  {
-    "wc": "banana",
-    "i": "India",
-    "e": "Bahrain",
-    "v": 45
-  },
-  {
-    "wc": "banana",
-    "i": "India",
-    "e": "Nepal",
-    "v": 59
-  },
-  {
-    "wc": "banana",
-    "i": "India",
-    "e": "Thailand",
-    "v": 2
-  },
-  {
-    "wc": "banana",
-    "i": "India",
-    "e": "Ukraine",
-    "v": 85
-  },
-  {
-    "wc": "banana",
-    "i": "India",
-    "e": "Mozambique",
-    "v": 8280
-  },
-  {
-    "wc": "banana",
-    "i": "Australia",
-    "e": "India",
-    "v": 883
-  },
-  {
-    "wc": "banana",
-    "i": "Austria",
-    "e": "India",
-    "v": 6
-  },
-  {
-    "wc": "banana",
-    "i": "Bahrain",
-    "e": "India",
-    "v": 3040337
-  },
-  {
-    "wc": "banana",
-    "i": "Belgium",
-    "e": "India",
-    "v": 106
-  },
-  {
-    "wc": "banana",
-    "i": "Botswana",
-    "e": "India",
-    "v": 1677
-  },
-  {
-    "wc": "banana",
-    "i": "Canada",
-    "e": "India",
-    "v": 2336
-  },
-  {
-    "wc": "banana",
-    "i": "Denmark",
-    "e": "India",
-    "v": 36
-  },
-  {
-    "wc": "banana",
-    "i": "France",
-    "e": "India",
-    "v": 2770
-  },
-  {
-    "wc": "banana",
-    "i": "Germany",
-    "e": "India",
-    "v": 18403
-  },
-  {
-    "wc": "banana",
-    "i": "Ireland",
-    "e": "India",
-    "v": 75059
-  },
-  {
-    "wc": "banana",
-    "i": "Israel",
-    "e": "India",
-    "v": 5000
-  },
-  {
-    "wc": "banana",
-    "i": "Italy",
-    "e": "India",
-    "v": 3065
-  },
-  {
-    "wc": "banana",
-    "i": "Kuwait",
-    "e": "India",
-    "v": 10671895
-  },
-  {
-    "wc": "banana",
-    "i": "Malaysia",
-    "e": "India",
-    "v": 257
-  },
-  {
-    "wc": "banana",
-    "i": "Maldives",
-    "e": "India",
-    "v": 459023
-  },
-  {
-    "wc": "banana",
-    "i": "Rep. of Moldova",
-    "e": "India",
-    "v": 40
-  },
-  {
-    "wc": "banana",
-    "i": "Oman",
-    "e": "India",
-    "v": 3857751
-  },
-  {
-    "wc": "banana",
-    "i": "Nepal",
-    "e": "India",
-    "v": 2009245
-  },
-  {
-    "wc": "banana",
-    "i": "Netherlands",
-    "e": "India",
-    "v": 1247
-  },
-  {
-    "wc": "banana",
-    "i": "New Zealand",
-    "e": "India",
-    "v": 11082
-  },
-  {
-    "wc": "banana",
-    "i": "Norway",
-    "e": "India",
-    "v": 140
-  },
-  {
-    "wc": "banana",
-    "i": "Pakistan",
-    "e": "India",
-    "v": 37796
-  },
-  {
-    "wc": "banana",
-    "i": "Qatar",
-    "e": "India",
-    "v": 1309950
-  },
-  {
-    "wc": "banana",
-    "i": "Russian Federation",
-    "e": "India",
-    "v": 23319
-  },
-  {
-    "wc": "banana",
-    "i": "Rwanda",
-    "e": "India",
-    "v": 98
-  },
-  {
-    "wc": "banana",
-    "i": "Saudi Arabia",
-    "e": "India",
-    "v": 11055480
-  },
-  {
-    "wc": "banana",
-    "i": "Singapore",
-    "e": "India",
-    "v": 803279
-  },
-  {
-    "wc": "banana",
-    "i": "Spain",
-    "e": "India",
-    "v": 183
-  },
-  {
-    "wc": "banana",
-    "i": "Sweden",
-    "e": "India",
-    "v": 3557
-  },
-  {
-    "wc": "banana",
-    "i": "Switzerland",
-    "e": "India",
-    "v": 6551
-  },
-  {
-    "wc": "banana",
-    "i": "United Arab Emirates",
-    "e": "India",
-    "v": 25053954
-  },
-  {
-    "wc": "banana",
-    "i": "Turkey",
-    "e": "India",
-    "v": 10925
-  },
-  {
-    "wc": "banana",
-    "i": "Egypt",
-    "e": "India",
-    "v": 27655
-  },
-  {
-    "wc": "banana",
-    "i": "United Kingdom",
-    "e": "India",
-    "v": 52434
-  },
-  {
-    "wc": "banana",
-    "i": "USA",
-    "e": "India",
-    "v": 161308
-  },
-  {
-    "wc": "banana",
-    "i": "Yemen",
-    "e": "India",
-    "v": 62
-  },
-  {
-    "wc": "banana",
-    "i": "Seychelles",
-    "e": "India",
-    "v": 65
-  }
-],
-"t": 2010},
-{"data":
-[
-	{
-    "wc": "banana",
-    "i": "Australia",
-    "e": "India",
-    "v": 3454
-  },
-  {
-    "wc": "banana",
-    "i": "Belgium",
-    "e": "India",
-    "v": 8916
-  },
-  {
-    "wc": "banana",
-    "i": "Bosnia Herzegovina",
-    "e": "India",
-    "v": 9104
-  },
-  {
-    "wc": "banana",
-    "i": "Canada",
-    "e": "India",
-    "v": 8981
-  },
-  {
-    "wc": "banana",
-    "i": "Denmark",
-    "e": "India",
-    "v": 21
-  },
-  {
-    "wc": "banana",
-    "i": "France",
-    "e": "India",
-    "v": 4784
-  },
-  {
-    "wc": "banana",
-    "i": "Germany",
-    "e": "India",
-    "v": 2788
-  },
-  {
-    "wc": "banana",
-    "i": "Greece",
-    "e": "India",
-    "v": 16104
-  },
-  {
-    "wc": "banana",
-    "i": "Ireland",
-    "e": "India",
-    "v": 75650
-  },
-  {
-    "wc": "banana",
-    "i": "Luxembourg",
-    "e": "India",
-    "v": 75
-  },
-  {
-    "wc": "banana",
-    "i": "New Zealand",
-    "e": "India",
-    "v": 30631
-  },
-  {
-    "wc": "banana",
-    "i": "Norway",
-    "e": "India",
-    "v": 2636
-  },
-  {
-    "wc": "banana",
-    "i": "Poland",
-    "e": "India",
-    "v": 16696
-  },
-  {
-    "wc": "banana",
-    "i": "Spain",
-    "e": "India",
-    "v": 170
-  },
-  {
-    "wc": "banana",
-    "i": "Sweden",
-    "e": "India",
-    "v": 351
-  },
-  {
-    "wc": "banana",
-    "i": "Switzerland",
-    "e": "India",
-    "v": 2487
-  },
-  {
-    "wc": "banana",
-    "i": "Turkey",
-    "e": "India",
-    "v": 9500
-  },
-  {
-    "wc": "banana",
-    "i": "United Kingdom",
-    "e": "India",
-    "v": 33341
-  },
-  {
-    "wc": "banana",
-    "i": "USA",
-    "e": "India",
-    "v": 133412
-  }
-],
-"t":2009}]}
+{
+    "timeBins": [{
+        "data": [{
+            "wc": "banana",
+            "i": "India",
+            "e": "Bahrain",
+            "v": 45
+        }, {
+            "wc": "banana",
+            "i": "India",
+            "e": "Nepal",
+            "v": 59
+        }, {
+            "wc": "banana",
+            "i": "India",
+            "e": "Thailand",
+            "v": 2
+        }, {
+            "wc": "banana",
+            "i": "India",
+            "e": "Ukraine",
+            "v": 85
+        }, {
+            "wc": "banana",
+            "i": "India",
+            "e": "Mozambique",
+            "v": 8280
+        }, {
+            "wc": "banana",
+            "i": "Australia",
+            "e": "India",
+            "v": 883
+        }, {
+            "wc": "banana",
+            "i": "Austria",
+            "e": "India",
+            "v": 6
+        }, {
+            "wc": "banana",
+            "i": "Bahrain",
+            "e": "India",
+            "v": 3040337
+        }, {
+            "wc": "banana",
+            "i": "Belgium",
+            "e": "India",
+            "v": 106
+        }, {
+            "wc": "banana",
+            "i": "Botswana",
+            "e": "India",
+            "v": 1677
+        }, {
+            "wc": "banana",
+            "i": "Canada",
+            "e": "India",
+            "v": 2336
+        }, {
+            "wc": "banana",
+            "i": "Denmark",
+            "e": "India",
+            "v": 36
+        }, {
+            "wc": "banana",
+            "i": "France",
+            "e": "India",
+            "v": 2770
+        }, {
+            "wc": "banana",
+            "i": "Germany",
+            "e": "India",
+            "v": 18403
+        }, {
+            "wc": "banana",
+            "i": "Ireland",
+            "e": "India",
+            "v": 75059
+        }, {
+            "wc": "banana",
+            "i": "Israel",
+            "e": "India",
+            "v": 5000
+        }, {
+            "wc": "banana",
+            "i": "Italy",
+            "e": "India",
+            "v": 3065
+        }, {
+            "wc": "banana",
+            "i": "Kuwait",
+            "e": "India",
+            "v": 10671895
+        }, {
+            "wc": "banana",
+            "i": "Malaysia",
+            "e": "India",
+            "v": 257
+        }, {
+            "wc": "banana",
+            "i": "Maldives",
+            "e": "India",
+            "v": 459023
+        }, {
+            "wc": "banana",
+            "i": "Rep. of Moldova",
+            "e": "India",
+            "v": 40
+        }, {
+            "wc": "banana",
+            "i": "Oman",
+            "e": "India",
+            "v": 3857751
+        }, {
+            "wc": "banana",
+            "i": "Nepal",
+            "e": "India",
+            "v": 2009245
+        }, {
+            "wc": "banana",
+            "i": "Netherlands",
+            "e": "India",
+            "v": 1247
+        }, {
+            "wc": "banana",
+            "i": "New Zealand",
+            "e": "India",
+            "v": 11082
+        }, {
+            "wc": "banana",
+            "i": "Norway",
+            "e": "India",
+            "v": 140
+        }, {
+            "wc": "banana",
+            "i": "Pakistan",
+            "e": "India",
+            "v": 37796
+        }, {
+            "wc": "banana",
+            "i": "Qatar",
+            "e": "India",
+            "v": 1309950
+        }, {
+            "wc": "banana",
+            "i": "Russian Federation",
+            "e": "India",
+            "v": 23319
+        }, {
+            "wc": "banana",
+            "i": "Rwanda",
+            "e": "India",
+            "v": 98
+        }, {
+            "wc": "banana",
+            "i": "Saudi Arabia",
+            "e": "India",
+            "v": 11055480
+        }, {
+            "wc": "banana",
+            "i": "Singapore",
+            "e": "India",
+            "v": 803279
+        }, {
+            "wc": "banana",
+            "i": "Spain",
+            "e": "India",
+            "v": 183
+        }, {
+            "wc": "banana",
+            "i": "Sweden",
+            "e": "India",
+            "v": 3557
+        }, {
+            "wc": "banana",
+            "i": "Switzerland",
+            "e": "India",
+            "v": 6551
+        }, {
+            "wc": "banana",
+            "i": "United Arab Emirates",
+            "e": "India",
+            "v": 25053954
+        }, {
+            "wc": "banana",
+            "i": "Turkey",
+            "e": "India",
+            "v": 10925
+        }, {
+            "wc": "banana",
+            "i": "Egypt",
+            "e": "India",
+            "v": 27655
+        }, {
+            "wc": "banana",
+            "i": "United Kingdom",
+            "e": "India",
+            "v": 52434
+        }, {
+            "wc": "banana",
+            "i": "USA",
+            "e": "India",
+            "v": 161308
+        }, {
+            "wc": "banana",
+            "i": "Yemen",
+            "e": "India",
+            "v": 62
+        }, {
+            "wc": "banana",
+            "i": "Seychelles",
+            "e": "India",
+            "v": 65
+        }],
+        "t": 2010
+    }, {
+        "data": [{
+            "wc": "banana",
+            "i": "Australia",
+            "e": "India",
+            "v": 3454
+        }, {
+            "wc": "banana",
+            "i": "Belgium",
+            "e": "India",
+            "v": 8916
+        }, {
+            "wc": "banana",
+            "i": "Bosnia Herzegovina",
+            "e": "India",
+            "v": 9104
+        }, {
+            "wc": "banana",
+            "i": "Canada",
+            "e": "India",
+            "v": 8981
+        }, {
+            "wc": "banana",
+            "i": "Denmark",
+            "e": "India",
+            "v": 21
+        }, {
+            "wc": "banana",
+            "i": "France",
+            "e": "India",
+            "v": 4784
+        }, {
+            "wc": "banana",
+            "i": "Germany",
+            "e": "India",
+            "v": 2788
+        }, {
+            "wc": "banana",
+            "i": "Greece",
+            "e": "India",
+            "v": 16104
+        }, {
+            "wc": "banana",
+            "i": "Ireland",
+            "e": "India",
+            "v": 75650
+        }, {
+            "wc": "banana",
+            "i": "Luxembourg",
+            "e": "India",
+            "v": 75
+        }, {
+            "wc": "banana",
+            "i": "New Zealand",
+            "e": "India",
+            "v": 30631
+        }, {
+            "wc": "banana",
+            "i": "Norway",
+            "e": "India",
+            "v": 2636
+        }, {
+            "wc": "banana",
+            "i": "Poland",
+            "e": "India",
+            "v": 16696
+        }, {
+            "wc": "banana",
+            "i": "Spain",
+            "e": "India",
+            "v": 170
+        }, {
+            "wc": "banana",
+            "i": "Sweden",
+            "e": "India",
+            "v": 351
+        }, {
+            "wc": "banana",
+            "i": "Switzerland",
+            "e": "India",
+            "v": 2487
+        }, {
+            "wc": "banana",
+            "i": "Turkey",
+            "e": "India",
+            "v": 9500
+        }, {
+            "wc": "banana",
+            "i": "United Kingdom",
+            "e": "India",
+            "v": 33341
+        }, {
+            "wc": "banana",
+            "i": "USA",
+            "e": "India",
+            "v": 133412
+        }],
+        "t": 2009
+    }]
+}

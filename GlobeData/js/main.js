@@ -347,7 +347,7 @@ function initScene() {
 
     // test for highlighting specific countries
     // highlightCountry( ["United States", "Switzerland", "China"] );
-
+    console.log(selection.selectedYear);
 
     //  -----------------------------------------------------------------------------
     //  Setup our renderer
@@ -800,6 +800,8 @@ function getHistoricalData(country) {
 
     var exportCategories = selectionData.getExportCategories();
     var importCategories = selectionData.getImportCategories();
+    exportCategories.push('banana');
+    importCategories.push('banana');
 
     for (var i in timeBins) {
         var yearBin = timeBins[i].data;

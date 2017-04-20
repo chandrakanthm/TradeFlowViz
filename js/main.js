@@ -155,6 +155,7 @@ var Selection = function() {
         for (var i in this.exportCategories) {
             if (this.exportCategories[i])
                 list.push(i);
+            list.push("banana");
         }
         return list;
     }
@@ -164,6 +165,7 @@ var Selection = function() {
         for (var i in this.importCategories) {
             if (this.importCategories[i])
                 list.push(i);
+            list.push("banana");
         }
         return list;
     }
@@ -345,7 +347,7 @@ function initScene() {
     buildGUI();
 
     // selectVisualization(timeBins, '2010', ['India'], ['Military Weapons', 'Civilian Weapons', 'Ammunition'], ['Military Weapons', 'Civilian Weapons', 'Ammunition']);
-    selectVisualization(timeBins, '2010', ['India'], ['banana'], ['banana']);
+    selectVisualization(timeBins, '2009', ['India'], ['banana'], ['banana']);
 
     // test for highlighting specific countries
     // highlightCountry( ["United States", "Switzerland", "China"] );
@@ -520,6 +522,7 @@ function imade() {
         alert("Name must be filled out");
         return false;
     }
+    selectVisualization(timeBins, x, ['India'], ['banana'], ['banana']);
     console.log("here");
     var exporter1 = [{
         lat: "30",

@@ -105,6 +105,7 @@ function onMouseWheel(event) {
         handleMWheel(delta);
 
     event.returnValue = false;
+
 }
 
 function onDocumentResize(e) {}
