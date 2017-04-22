@@ -71,7 +71,7 @@ for k in range(0,len(countrylist)):
             res_data[a].append(b)
 
 
-final_file_name = "Data.json"
+final_file_name = "exportData.json"
 if not os.path.isfile("./"+final_file_name):
     with open(final_file_name, 'w') as outfile:
         json.dump(res_data, outfile)
