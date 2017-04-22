@@ -175,7 +175,7 @@ function getVisualizedMesh(linearData, year, countries, exportCategories, import
         }
     }
 
-    // console.log(selectedCountry);
+    console.log(selectedCountry);
 
     linesGeo.colors = lineColors;
 
@@ -330,6 +330,7 @@ function selectVisualization(linearData, year, countries, exportCategories, impo
     previouslySelectedCountry = selectedCountry;
     selectedCountry = countryData[countries[0].toUpperCase()];
 
+
     selectedCountry.summary = {
         imported: {
             mil: 0,
@@ -347,7 +348,7 @@ function selectVisualization(linearData, year, countries, exportCategories, impo
         historical: getHistoricalData(selectedCountry),
     };
 
-    // console.log(selectedCountry);
+    console.log(selectedCountry);
 
     //  clear off the country's internally held color data we used from last highlight
     for (var i in countryData) {

@@ -331,7 +331,7 @@ function initScene() {
     }
 
     console.log(selectableCountries);
-
+    console.log(selectedCountry);
     // load geo data (country lat lons in this case)
     console.time('loadGeoData');
     loadGeoData(latlonData);
@@ -346,8 +346,8 @@ function initScene() {
 
     buildGUI();
 
-    // selectVisualization(timeBins, '2010', ['India'], ['Military Weapons', 'Civilian Weapons', 'Ammunition'], ['Military Weapons', 'Civilian Weapons', 'Ammunition']);
-    selectVisualization(timeBins, '2009', ['India'], ['banana'], ['banana']);
+    selectVisualization(timeBins, '2010', ['India'], ['Military Weapons', 'Civilian Weapons', 'Ammunition'], ['Military Weapons', 'Civilian Weapons', 'Ammunition']);
+    //selectVisualization(timeBins, '2009', ['India'], ['banana'], ['banana']);
 
     // test for highlighting specific countries
     // highlightCountry( ["United States", "Switzerland", "China"] );
@@ -927,6 +927,7 @@ function getPickColor() {
     }
     return buf[0];
 }
+console.log(selectedCountry);
 
 function intersect() {
     raycaster.setFromCamera(mouse, camera);
