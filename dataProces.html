@@ -54,9 +54,16 @@ z-index: 9999;">
                         <!--<input type="name" step="any" style="background: black;color: #1da0e8;" id="coordinates-lng" name="country2" class="form-control" placeholder="Commodity">-->
 						<select id="commodity" class="form-control" style="background: black;color: #1da0e8;">
 								<option></option>
-								<option value="gold">Gold</option>
-								<option value="silver">Silver</option>
+								<option value="coffeee">Coffee</option>
 								<option value="copper">Copper</option>
+                                <option value="corn">Corn</option>
+								<option value="cotton">Cotton</option>
+                                <option value="crude">Crude Oil</option>
+								<option value="gold">Gold</option>
+								<option value="natural">Natural Gas</option>
+								<option value="silver">Silver</option>
+								<option value="sugar">Sugar</option>
+                                <option value="wheat">Wheat</option>
 							  </select>
                         <!--  <input type="number" step="any" id="coordinates-lat" class="form-control" placeholder="Latitude"> -->
                     </div>
@@ -67,8 +74,16 @@ z-index: 9999;">
                         <!--<input type="name" step="any" style="background: black;color: #1da0e8;" id="coordinates-lng" class="form-control" placeholder="Commodity">-->
 						<select id="reporter" class="form-control" style="background: black;color: #1da0e8;">
 								<option></option>
-								<option value="india">India</option>
-								<option value="china">China</option>
+								<option value="brazil">Brazil</option>
+								<option value="canada">Canada</option>
+                                <option value="china">China</option>
+								<option value="france">France</option>
+                                <option value="japan">Japan</option>
+                                <option value="india">India</option>
+                                <option value="mexico">Mexico</option>
+                                <option value="russia">Russia</option>
+                                <option value="uk">UK</option>
+                                <option value="us">US</option>
 							  </select>
                     </div>
                 </div>
@@ -78,8 +93,16 @@ z-index: 9999;">
                         <!--<input type="date" id="timeframe-start" style="background: black;color: #1da0e8;" class="form-control" placeholder="mm/dd/yyyy">-->
 						<select id="partner" class="form-control"  style="background: black;color: #1da0e8;">
 								<option></option>
-								<option value="india">India</option>
-								<option value="china">China</option>
+								<option value="brazil">Brazil</option>
+								<option value="canada">Canada</option>
+                                <option value="china">China</option>
+								<option value="france">France</option>
+                                <option value="japan">Japan</option>
+                                <option value="india">India</option>
+                                <option value="mexico">Mexico</option>
+                                <option value="russia">Russia</option>
+                                <option value="uk">UK</option>
+                                <option value="us">US</option>
 							  </select>
                     </div>
                 </div>
@@ -104,12 +127,12 @@ z-index: 9999;">
 		
 		<script>
 		function displayFormData(){
-		alert("comin over here");
 		var inObj = new Object();
 		inObj.direction = document.getElementById("direction").value;
 		inObj.commodity = document.getElementById("commodity").value;
 		inObj.reporter = document.getElementById("reporter").value;
 		inObj.partner = document.getElementById("partner").value;
+        
 		var msg = "Direction: " + document.getElementById("direction").value
 					+ "\nCommodity: " + document.getElementById("commodity").value
 					+ "\n Importer: " + document.getElementById("reporter").value
@@ -121,6 +144,7 @@ z-index: 9999;">
 		}
 		function displayJSON(){
 		var input = displayFormData();
+        var yr_val = "2013";//selectionData.selectedYear;
 		readTextFile("./data_pre/Data.json", function(text){
 		
 			var data = JSON.parse(text);
@@ -129,8 +153,8 @@ z-index: 9999;">
 			var array ;
 			if(input.partner == "" && input.reporter!="" && input.commodity != ""){
 				//All Imports: for given Country + Year
-				alert("comin here 1");
-				var key = input.reporter+"2012";
+				console.log("inside displayJson");
+				var key = input.reporter+""+yr_val;
 				array = [];
 				for(var i = 0 ; i < data[key].length ; i++)
 				{ var temp = {};
@@ -140,9 +164,8 @@ z-index: 9999;">
 						array.push(temp);
 					}
 				}
-				alert(array[0].country+array[1].value);
 			}else if(input.partner != ""&& input.reporter!="" && input.commodity != "" ){ // case two : partner is selected
-				alert("comin here 2");
+				console.log("case 2");
 				var key1 = input.reporter+"2011";
 				var key2 = input.reporter+"2012";
 				var key3 = input.reporter+"2013";
@@ -153,16 +176,14 @@ z-index: 9999;">
 				array = [];
 				for(var key = 0; key<arr.length ;key++)
 				{
-					alert(arr[key]);
 					if(data[arr[key]] == null)
 					{
-						//alert("no import");
+						console.log("no import");
 						continue;
 					}
 					for(var i = 0 ; i < data[arr[key]].length ; i++)
 					{ 	
 						var temp = {};
-						//alert("1:"+data[arr[key]][i].commodity+"\n2: "+input.commodity+"\n3: "+(data[arr[key]][i].commodity==input.commodity)+"\n4: "+data[arr[key]][i].country+ "\n5: "+input.partner+"\n6: "+ (data[arr[key]][i].country == input.partner));
 						if(data[arr[key]][i].commodity==input.commodity && data[arr[key]][i].country == input.partner){
 							//alert(year_arr[key]+" "+data[arr[key]][i].val);
 							temp.year = year_arr[key];
@@ -175,8 +196,8 @@ z-index: 9999;">
 				}
 				
 			}else if(input.commodity == "" && input.reporter!="" && input.partner != ""){
-				alert("comin here 3");
-				var key = input.reporter+"2012";
+				console.log("case 3");
+				var key = input.reporter+""+yr_val;
 				array = [];
 				for(var i = 0 ; i < data[key].length ; i++)
 				{ var temp = {};
@@ -188,16 +209,39 @@ z-index: 9999;">
 				}
 				//alert(array.length);
 			
+			}else if(input.commodity == "" && input.reporter!="" && input.partner == ""){
+				console.log("case 4");
+				var key = input.reporter+""+yr_val;
+				array = [];
+                arr_k = {};
+				for(var i = 0 ; i < data[key].length ; i++)
+				{       var temp = [];
+                        temp.value=data[key][i].val;
+                        var nt_val = data[key][i].val;
+                        var commodity = data[key][i].commodity;
+                        if (arr_k.hasOwnProperty(commodity)){
+                              arr_k[commodity]["value"] = arr_k[commodity]["value"] + nt_val;
+                        }else{
+                            
+                              arr_k[commodity] = {};
+                              arr_k[commodity]["commodity"] = commodity;
+                              arr_k[commodity]["value"] = nt_val;
+                        }
+				}
+                for (key1 in arr_k){
+                    var lvalue = arr_k[key1];
+                    array.push(arr_k[key1]); 
+                }
+				//alert(array.length);
 			}
+            console.log("year : "+selectionData.selectedYear);
 			console.log(array);
-			alert(array.length);
+			//alert(array.length);
 			return array;
 			
 		});
 		
-		
-		
-		 }
+        } // the displayJson fucntion completed over here
 		 
 		function readTextFile(file, callback) {
 			var rawFile = new XMLHttpRequest();
