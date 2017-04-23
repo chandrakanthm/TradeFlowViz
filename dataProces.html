@@ -133,7 +133,9 @@ z-index: 9999;">
                 inObj.partner = document.getElementById("partner").value;
 
                 var msg = "Direction: " + document.getElementById("direction").value + "\nCommodity: " + document.getElementById("commodity").value + "\n Importer: " + document.getElementById("reporter").value + "\n Exporter: " + document.getElementById("partner").value;
+
                 console.log(inObj.direction);
+
 
 
                 return inObj;
@@ -141,6 +143,7 @@ z-index: 9999;">
 
             function displayJSON() {
                 var input = displayFormData();
+
                 //var yr_val = "2013"; //selectionData.selectedYear;
                 var yr_val = selectionData.selectedYear;
                 console.log(yr_val);
@@ -212,6 +215,7 @@ z-index: 9999;">
 
                                 }
                             }
+
                             console.log(countryValues);
                             drawPiegrph(countryCommodities, countryValues, 1);
                             //alert(array.length);
@@ -245,7 +249,6 @@ z-index: 9999;">
                         console.log(array);
 
 
-
                         //alert(array.length);
                         return array;
 
@@ -258,7 +261,6 @@ z-index: 9999;">
 
 
                 }
-
 
 
             } // the displayJson fucntion completed over here
@@ -651,7 +653,7 @@ canvas {
     background: url('yearHandle.png') 0px 0 no-repeat;
     position: absolute;
     bottom: 20px;
-    left: 642px;
+    left: 25px;
 }
 
 #history .graph {
