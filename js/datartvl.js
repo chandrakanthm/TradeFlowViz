@@ -168,7 +168,7 @@ function displayJSON() {
             console.log("year : " + selectionData.selectedYear);
             console.log(commodities);
 
-
+            imade(selectionData.selectedYear, [input.reporter], allCommodities, allCommodities);
             //alert(array.length);
             return array;
 
@@ -187,14 +187,24 @@ function displayJSON() {
                 console.log("inside displayJson");
                 var key = input.reporter + "" + yr_val;
                 array = [];
+                var countries = [];
+                var year_arr = ["2011", "2012", "2013", "2014", "2015"];
+                var countriesValue = [];
+
                 for (var i = 0; i < data[key].length; i++) {
                     var temp = {};
                     if (data[key][i].commodity == input.commodity) {
                         temp.value = data[key][i].val;
                         temp.country = data[key][i].country;
+                        countries.push(temp.country);
+                        countriesValue.push(temp.value);
                         array.push(temp);
                     }
                 }
+                console.log(titleCase(input.commodity));
+                drawbargrph(countries, input.commodity, countriesValue);
+                console.log('generating globe for case1');
+                imade(selectionData.selectedYear, [input.reporter], [titleCase(input.commodity)], [titleCase(input.commodity)]);
             } else if (input.partner != "" && input.reporter != "" && input.commodity != "") { // case two : partner is selected
                 console.log("case 2");
                 var key1 = input.reporter + "2011";
@@ -205,6 +215,8 @@ function displayJSON() {
                 var arr = [key1, key2, key3, key4, key5];
                 var year_arr = ["2011", "2012", "2013", "2014", "2015"];
                 array = [];
+                var allYrs = [];
+                var yearsvalue = [];
                 for (var key = 0; key < arr.length; key++) {
                     if (data[arr[key]] == null) {
                         console.log("no import");
@@ -219,9 +231,21 @@ function displayJSON() {
                             temp.reporter = input.reporter;
                             temp.partner = input.partner;
                             array.push(temp);
+                            allYrs.push(temp.year);
+                            yearsvalue.push(temp.value);
                         }
                     }
                 }
+                console.log(array);
+                var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
+                var selectedCommodity = input.commodity;
+                console.log('generating globe for case2');
+                imade(selectionData.selectedYear, [input.reporter], [selectedCommodity], allCommodities);
+                // selectedCountry = input.reporter;
+                // console.log(selectedCountry.summary.imported.total);
+                drawbargrph(year_arr, selectedCommodity, yearsvalue);
+                // document.getElementById("piechart").style.visibility = "hidden";
+
 
             } else if (input.commodity == "" && input.reporter != "" && input.partner != "") {
                 console.log("case 3");
@@ -242,6 +266,11 @@ function displayJSON() {
                     }
                 }
 
+
+                console.log(selectionData.selectedYear);
+                var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
+                console.log('generating globe for case3');
+                imade(selectionData.selectedYear, [input.reporter], allCommodities, allCommodities);
                 console.log(countryValues);
                 drawPiegrph(countryCommodities, countryValues, 1);
                 //alert(array.length);
@@ -251,6 +280,8 @@ function displayJSON() {
                 var key = input.reporter + "" + yr_val;
                 array = [];
                 arr_k = {};
+                var commodities = [];
+                var commoditiesValues = [];
                 for (var i = 0; i < data[key].length; i++) {
                     var temp = [];
                     temp.value = data[key][i].val;
@@ -264,17 +295,22 @@ function displayJSON() {
                         arr_k[commodity]["commodity"] = commodity;
                         arr_k[commodity]["value"] = nt_val;
                     }
+                    commoditiesValues.push(temp.value);
+                    commodities.push(commodity);
                 }
                 for (key1 in arr_k) {
                     var lvalue = arr_k[key1];
                     array.push(arr_k[key1]);
+
+
                 }
+                drawPiegrph(commodities, commoditiesValues, 1);
                 //alert(array.length);
             }
             console.log("year : " + selectionData.selectedYear);
             console.log(array);
 
-
+            imade(selectionData.selectedYear, [input.reporter], allCommodities, allCommodities);
             //alert(array.length);
             return array;
 
