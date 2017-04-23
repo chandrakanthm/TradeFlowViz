@@ -8,6 +8,15 @@
     <meta name="viewport" content="user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./assets/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <!-- graph network  -->
+    <script src="graphjs/sigma.min.js" type="text/javascript" language="javascript"></script>
+    <script src="graphjs/sigma.parseJson.js" type="text/javascript" language="javascript"></script>
+    <script src="graphjs/jquery.fancybox.pack.js" type="text/javascript" language="javascript"></script>
+    <script src="graphjs/main.js" type="text/javascript" language="javascript"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="js/jquery.fancybox.css" /> -->
+    <link rel="stylesheet" href="graphcss/graphstyle.css" type="text/css" media="screen" />
+    <link rel="stylesheet" media="screen and (max-height: 770px)" href="css/tablet.css" />
     <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="geo-explorer.css" /> -->
@@ -126,6 +135,59 @@ z-index: 99;">
         <div id="query">
         </div>
     </div>
+    <!-- graph  -->
+    <div class="sigma-expand" id="sigma-canvas">
+        <style type="text/css">
+        #sigma_edges_1,
+        #sigma_nodes_1,
+        #sigma_labels_1,
+        #sigma_hover_1,
+        #sigma_mouse_1,
+        #sigma_monitor_1 {
+            margin-top: 0rem;
+            margin-left: 0rem!important;
+            z-index: 9;
+            position: fixed;
+        }
+        
+        #sigma-canvas {
+            canvas {
+                margin-top: 30rem;
+                margin-left: 0rem!important;
+                z-index: 9;
+                position: fixed;
+            }
+        }
+        </style>
+    </div>
+    <!-- <div id="mainpanel" style="display: hidden;">
+    <div class="col">
+        <div class="b1">
+            <form>
+                <div id="search" class="cf">
+                    <h2>Search:</h2>
+                    <input type="text" name="search" value="Search by name" class="empty" />
+                    <div class="state"></div>
+                    <div class="results"></div>
+                </div>
+                <div class="cf" id="attributeselect">
+                    <h2>Group Selector:</h2>
+                    <div class="select">Select Group</div>
+                    <div class="list cf"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="information">
+    </div>
+</div>
+ -->
+    <div id="zoom">
+        <div class="z" rel="in"></div>
+        <div class="z" rel="out"></div>
+        <div class="z" rel="center"></div>
+    </div>
+    <!-- graph end -->
     <!--  <div style="margin-bottom: 5rem;"></div> -->
     <div id="wrapper" class="row">
         <div id="loading" class="col-md-12">
@@ -274,7 +336,6 @@ z-index: 99;">
         <script src="js/THREEx.KeyboardState.js"></script>
         <script src="js/THREEx.WindowResize.js"></script>
         <script src="js/Stats.js"></script>
-        <script src="js/jquery-1.7.1.min.js"></script>
         <script src="js/jquery-ui-1.8.21.custom.min.js"></script>
         <script src="js/RequestAnimationFrame.js"></script>
         <script src="js/ShaderExtras.js"></script>
