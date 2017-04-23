@@ -29,7 +29,7 @@ var d3Graphs = {
     cumImportLblY: 0,cumExportLblY: 0,
     inited: false,
     histogramOpen: false,
-    handleLeftOffset: 12,
+    handleLeftOffset: 25,
     handleInterval: 35,
     windowResizeTimeout: -1,
     histogramImports: null,
@@ -97,14 +97,16 @@ var d3Graphs = {
     },
     clickTimeline:function() {
         var year = $(this).html();
-        if(year < 10) {
-            year = (year * 1) + 2000;
-        }
-        if(year < 100) {
-            year = (year * 1) + 1900
-        }
-        var index = year - 1992;
-        var leftPos = d3Graphs.handleLeftOffset + d3Graphs.handleInterval * index;
+//        document.getElementById("handle").innerHTML = "<div>hii</div>";
+//        console.log(document.getElementById("test").innerHTML);
+//        if(year < 10) {
+//            year = (year * 1) + 2010;
+//        }
+//        if(year < 100) {
+//            year = (year * 1) + 1900
+//        }
+        var index = year - 2011;
+        var leftPos = d3Graphs.handleLeftOffset + (d3Graphs.handleInterval+115) * index;
         $("#handle").css('left',leftPos+"px");
         d3Graphs.updateViz();
     },
