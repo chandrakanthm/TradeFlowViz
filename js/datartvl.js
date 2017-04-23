@@ -309,6 +309,14 @@ function displayJSON() {
                 }
                 drawPiegrph(commodities, commoditiesValues, 1);
                 //alert(array.length);
+            }else if(input.commodity != "" && input.reporter == "" && input.partner == ""){
+                
+               // =============
+                 drawSpiralHeatMap();
+
+                    
+                    
+               // ==============
             }
             console.log("year : " + selectionData.selectedYear);
             console.log(array);
