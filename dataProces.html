@@ -133,7 +133,9 @@ z-index: 9999;">
                 inObj.partner = document.getElementById("partner").value;
 
                 var msg = "Direction: " + document.getElementById("direction").value + "\nCommodity: " + document.getElementById("commodity").value + "\n Importer: " + document.getElementById("reporter").value + "\n Exporter: " + document.getElementById("partner").value;
-                alert(inObj.direction);
+
+                console.log(inObj.direction);
+
 
 
                 return inObj;
@@ -141,8 +143,11 @@ z-index: 9999;">
 
             function displayJSON() {
                 var input = displayFormData();
+
+                //var yr_val = "2013"; //selectionData.selectedYear;
                 var yr_val = selectionData.selectedYear;
-		          alert(yr_val);
+                console.log(yr_val);
+
                 if (input.direction == "Exports") {
 
                     console.log("calling for exports ");
@@ -210,6 +215,9 @@ z-index: 9999;">
 
                                 }
                             }
+
+                            console.log(countryValues);
+                            drawPiegrph(countryCommodities, countryValues, 1);
                             //alert(array.length);
 
                         } else if (input.commodity == "" && input.reporter != "" && input.partner == "") {
@@ -239,7 +247,6 @@ z-index: 9999;">
                         }
                         console.log("year : " + selectionData.selectedYear);
                         console.log(array);
-                        drawPiegrph(countryCommodities, countryValues, 1);
 
 
                         //alert(array.length);
@@ -254,6 +261,7 @@ z-index: 9999;">
 
 
                 }
+
 
             } // the displayJson fucntion completed over here
 
@@ -560,10 +568,10 @@ layCountries noPointer">
                 <div class="container noPointer"></div>
             </div> -->
             <ul class="timeline pointer">
-                <li  style = "padding-right : 150px; padding-left : 20px">2011</li>
-                <li  style = "padding-right : 150px;">2012</li>
-                <li  style = "padding-right : 150px;">2013</li>
-                <li  style = "padding-right : 150px;">2014</li>
+                <li style="padding-right : 150px; padding-left : 20px">2011</li>
+                <li style="padding-right : 150px;">2012</li>
+                <li style="padding-right : 150px;">2013</li>
+                <li style="padding-right : 150px;">2014</li>
                 <li>2015</li>
                 <div id="handle" class="noMapDrag"></div>
             </ul>
