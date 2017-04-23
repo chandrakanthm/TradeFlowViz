@@ -7,6 +7,7 @@ function titleCase(str) {
 function displayFormData() {
     var inObj = new Object();
     inObj.direction = document.getElementById("direction").value;
+
     inObj.commodity = document.getElementById("commodity").value;
     inObj.reporter = document.getElementById("reporter").value;
     inObj.partner = document.getElementById("partner").value;
@@ -101,7 +102,7 @@ function displayJSON() {
                 // selectedCountry = input.reporter;
                 // console.log(selectedCountry.summary.imported.total);
                 drawbargrph(year_arr, selectedCommodity, yearsvalue);
-                document.getElementById("piechart").style.visibility = "hidden";
+                // document.getElementById("piechart").style.visibility = "hidden";
 
             } else if (input.commodity == "" && input.reporter != "" && input.partner != "") {
                 console.log("case 3");
@@ -129,6 +130,8 @@ function displayJSON() {
                 imade(selectionData.selectedYear, [input.reporter], allCommodities, allCommodities);
                 console.log(countryValues);
                 drawPiegrph(countryCommodities, countryValues, 1);
+                // document.getElementById("m").style.visibility = "hidden";
+
                 //alert(array.length);
 
             } else if (input.commodity == "" && input.reporter != "" && input.partner == "") {
@@ -136,6 +139,8 @@ function displayJSON() {
                 var key = input.reporter + "" + yr_val;
                 array = [];
                 arr_k = {};
+                var commodities = [];
+                var commoditiesValues = [];
                 for (var i = 0; i < data[key].length; i++) {
                     var temp = [];
                     temp.value = data[key][i].val;
@@ -149,15 +154,19 @@ function displayJSON() {
                         arr_k[commodity]["commodity"] = commodity;
                         arr_k[commodity]["value"] = nt_val;
                     }
+                    commoditiesValues.push(temp.value);
+                    commodities.push(commodity);
+
                 }
                 for (key1 in arr_k) {
                     var lvalue = arr_k[key1];
                     array.push(arr_k[key1]);
                 }
+                drawPiegrph(commodities, commoditiesValues, 1);
                 //alert(array.length);
             }
             console.log("year : " + selectionData.selectedYear);
-            console.log(array);
+            console.log(commodities);
 
 
             //alert(array.length);
