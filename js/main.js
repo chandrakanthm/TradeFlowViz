@@ -64,7 +64,17 @@ var weaponLookup = {
     'Military Weapons': 'mil',
     'Civilian Weapons': 'civ',
     'Ammunition': 'ammo',
-    'banana': 'banana'
+    'banana': 'banana',
+    'Coffee': 'coffee',
+    'Copper': 'copper',
+    'Corn': 'corn',
+    'Cotton': 'cotton',
+    'Crude Oil': 'crude',
+    'Gold': 'Gold',
+    'Natural Gas': 'Natural Gas',
+    'Silver': 'silver',
+    'Sugar': 'sugar',
+    'Wheat': 'wheat'
 };
 
 //  a list of the reverse for easy lookup
@@ -345,8 +355,8 @@ function initScene() {
     rotating.add(visualizationMesh);
 
     buildGUI();
-
-    selectVisualization(timeBins, '2010', ['India'], ['Military Weapons', 'Civilian Weapons', 'Ammunition'], ['Military Weapons', 'Civilian Weapons', 'Ammunition']);
+    //selectVisualization(timeBins, '2012', ['India'], ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'], ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat']);
+    //    selectVisualization(timeBins, '2010', ['India'], ['Military Weapons', 'Civilian Weapons', 'Ammunition'], ['Military Weapons', 'Civilian Weapons', 'Ammunition']);
     //selectVisualization(timeBins, '2009', ['India'], ['banana'], ['banana']);
 
     // test for highlighting specific countries
@@ -516,40 +526,10 @@ function findCode(countryName) {
     return 'not found';
 }
 
-function imade() {
-    var x = document.forms["myForm"]["fname"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    selectVisualization(timeBins, x, ['India'], ['banana'], ['banana']);
-    console.log("here");
-    var exporter1 = [{
-        lat: "30",
-        lon: "77",
-        countryCode: "IN",
-        countryName: "INDIA",
-        center: {
-            x: 100.95270837662308,
-            y: 37.13678355502349,
-            z: 37.46860881676518
-        }
-    }];
-    var importer1 = [{
-        lat: "26",
-        lon: "50.55",
-        countryCode: "BH",
-        countryName: "BAHRAIN",
-        center: {
-            x: -7.186102929431766,
-            y: 79.47674899270672,
-            z: 60.264469583975476
-        },
-
-
-    }];
-
-    makeConnectionLineGeometry(exporter, importer, set.v, set.wc);
+function imade(yr, country, importCategories, exportCategories) {
+    console.log('in imade main');
+    selectVisualization(timeBins, yr, country, importCategories, exportCategories);
+    //selectVisualization(timeBins, '2012', ['India'], ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'], ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat']);
 
     // selectVisualization(timeBins, '2010', [x], ['banana'], ['banana']);
 }
