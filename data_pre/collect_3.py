@@ -64,7 +64,10 @@ for k in range(0,len(countrylist)):
                 res_data[a] = []
             if data_json[j]["rtTitle"].lower() not in countrylist:
                 continue
-            b = (data_json[j]["rtTitle"],dataTable[str(data_json[j]["cmdCode"])])
+            b = {}
+            b["country"] = data_json[j]["rtTitle"].lower()
+            b["commodity"] = dataTable[str(data_json[j]["cmdCode"])]
+            b["val"] = data_json[j]["TradeValue"]
             res_data[a].append(b)
 
 
