@@ -58,9 +58,12 @@ function displayJSON() {
                 console.log(array);
 
                 console.log(titleCase(input.commodity));
+                var selectedCommodity = input.commodity;
+                var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
                 drawbargrph(countries, input.commodity, countriesValue);
                 console.log('generating globe for case1');
-                imade(selectionData.selectedYear, [input.reporter], [titleCase(input.commodity)], [titleCase(input.commodity)]);
+                imade(selectionData.selectedYear, [input.reporter], [selectedCommodity]);
+                //imade(selectionData.selectedYear, [input.reporter], [titleCase(input.commodity)], [titleCase(input.commodity)]);
             } else if (input.partner != "" && input.reporter != "" && input.commodity != "") { // case two : partner is selected
                 console.log("case 2");
                 var key1 = input.reporter + "2011";
