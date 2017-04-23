@@ -9,24 +9,24 @@ import os.path
 #"284330,150810,09,1109,52,071040,17,28432,7406"
 
 countrylist = ["brazil","canada","china","france","japan","india","mexico","russia","uk","us"]
-yrs = ["2012","2013","2014","2015","2016"]
-dataTable ={"284330":"Gold","150810":"crude","09":"coffee","1109":"wheat","52":"cotton","071040":"corn","17":"sugar","28432":"silver","7406":"copper"};
+yrs = ["2011","2012","2013","2014","2015"]
+dataTable ={"284330":"gold","150810":"crude","09":"coffee","1109":"wheat","52":"cotton","071040":"corn","17":"sugar","28432":"silver","7406":"copper","271111":"natural gas"};
 file_list = []
 start = time.time()
-urls = ["http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=76&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=124&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=156&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=251&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=392&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=699&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=484&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=643&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=826&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2016,2015,2014,2013,2012&r=834&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406&fmt=json"]
+urls = ["http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012&r=76&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=124&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=156&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=251&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=392&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=699&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=484&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=643&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=826&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=834&p=all&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json"]
 
 
 def fetch_url(url, i):
-    file_name = "file_"+countrylist[i]+".json"
+    file_name = "file_1_"+countrylist[i]+".json"
     file_list.append(file_name)
     response = requests.get(url, verify=False)
     data = response.json()
@@ -63,28 +63,24 @@ for k in range(0,len(countrylist)):
             data_row["export"] = countrylist[k]
             data_row["netVal"] = data_json[j]["TradeValue"]
             data_row["import"] = data_json[j]["ptTitle"]
-            if data_json[j]['yr'] == 2012:
+            if data_json[j]['yr'] == 2011:
                 res_data["timeBins"][0]["data"].append(data_row)
-                #print "2012"
-            elif data_json[j]['yr'] == 2013:
+            elif data_json[j]['yr'] == 2012:
                 res_data["timeBins"][1]["data"].append(data_row)
-                #print "2013"
-            elif data_json[j]['yr'] == 2014:
+            elif data_json[j]['yr'] == 2013:
                 res_data["timeBins"][2]["data"].append(data_row)
-                #print "2014"
+            elif data_json[j]['yr'] == 2014:
+                res_data["timeBins"][3]["data"].append(data_row)
             elif data_json[j]['yr'] == 2015:
-                res_data["timeBins"][3]["data"].append(data_row)
-                #print "2015"
-            elif data_json[j]['yr'] == 2016:
-                res_data["timeBins"][3]["data"].append(data_row)
-                #print "2016"
-final_file_name = "final_json"
+                res_data["timeBins"][4]["data"].append(data_row)
+                
+final_file_name = "glodeData.json"
 if not os.path.isfile("./"+final_file_name):
     with open(final_file_name, 'w') as outfile:
         json.dump(res_data, outfile)
     
     
-print res_data
+
     
 #for i in range(0,len(file_list)):
     
