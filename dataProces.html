@@ -142,7 +142,7 @@ z-index: 9999;">
             function displayJSON() {
                 var input = displayFormData();
                 var yr_val = selectionData.selectedYear;
-		alert(yr_val);
+		          alert(yr_val);
                 if (input.direction == "Exports") {
 
                     console.log("calling for exports ");
@@ -197,7 +197,7 @@ z-index: 9999;">
                             var key = input.reporter + "" + yr_val;
                             array = [];
                             var countryCommodities = [];
-                            countryValues = [];
+                            var countryValues = [];
                             for (var i = 0; i < data[key].length; i++) {
                                 var temp = {};
                                 if (data[key][i].country == input.partner) {
