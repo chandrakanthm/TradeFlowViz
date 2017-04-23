@@ -378,7 +378,6 @@ function displayJSON() {
                     }
                 
                 }
-                alert(array_spiral);
                 drawSpiralHeatMap(array_spiral);
     
                // ==============
