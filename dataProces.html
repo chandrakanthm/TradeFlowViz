@@ -579,7 +579,7 @@ z-index: 9999;">
             function drawbargrph(xlables, barlabelp, bardata_one, barlabels, bardata_two) {
                 var ctx = document.getElementById('m').getContext('2d');
                 var myChart = new Chart(ctx, {
-                    type: 'line',
+                    type: 'bar',
                     data: {
                         labels: xlables, //(['10', '11', '12', '13', '14', '15', '16'],'oil',[12, 19, 3, 17, 6, 3, 7],'coffee',[2, 29, 5, 5, 2, 3, 10])
                         datasets: [{
@@ -722,7 +722,7 @@ layCountries noPointer">
 
 canvas {
     margin-left: -35rem;
-    margin-top: -30rem;
+    margin-top: -20rem;
     max-width: 1500rem;
     /*margin-left: 0rem; max-width: 60rem; margin-top: 20rem;
 */

@@ -58,8 +58,11 @@
                          console.log("no import");
                          continue;
                      }
+                     var allYrs = [];
+                     var yearsvalue = [];
                      for (var i = 0; i < data[arr[key]].length; i++) {
                          var temp = {};
+
                          if (data[arr[key]][i].commodity == input.commodity && data[arr[key]][i].country == input.partner) {
                              //alert(year_arr[key]+" "+data[arr[key]][i].val);
                              temp.year = year_arr[key];
@@ -67,16 +70,27 @@
                              temp.reporter = input.reporter;
                              temp.partner = input.partner;
                              array.push(temp);
+                             allYrs.push(temp.year);
+                             yearsvalue.push(temp.value);
+
                          }
                      }
                  }
+                 console.log(array);
+                 var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
+                 var selectedCommodity = input.commodity
+                 imade(selectionData.selectedYear, [input.reporter], [selectedCommodity], allCommodities);
+                 // selectedCountry = input.reporter;
+                 // console.log(selectedCountry.summary.imported.total);
+                 drawbargrph(year_arr, selectedCommodity, yearsvalue);
+                 document.getElementById("piechart").style.visibility = "hidden";
 
              } else if (input.commodity == "" && input.reporter != "" && input.partner != "") {
                  console.log("case 3");
                  var key = input.reporter + "" + yr_val;
                  array = [];
                  //except natural gas 
-                 var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
+
                  var countryCommodities = [];
                  var countryValues = [];
                  for (var i = 0; i < data[key].length; i++) {
@@ -92,6 +106,7 @@
                      }
                  }
                  console.log(selectionData.selectedYear);
+                 var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
                  imade(selectionData.selectedYear, [input.reporter], allCommodities, allCommodities);
                  console.log(countryValues);
                  drawPiegrph(countryCommodities, countryValues, 1);
