@@ -141,8 +141,8 @@ z-index: 9999;">
 
             function displayJSON() {
                 var input = displayFormData();
-                var yr_val = "2013"; //selectionData.selectedYear;
-
+                var yr_val = selectionData.selectedYear;
+		alert(yr_val);
                 if (input.direction == "Exports") {
 
                     console.log("calling for exports ");
@@ -196,7 +196,7 @@ z-index: 9999;">
                             console.log("case 3");
                             var key = input.reporter + "" + yr_val;
                             array = [];
-                            countryCommodities = [];
+                            var countryCommodities = [];
                             countryValues = [];
                             for (var i = 0; i < data[key].length; i++) {
                                 var temp = {};
@@ -560,7 +560,7 @@ layCountries noPointer">
                 <div class="container noPointer"></div>
             </div> -->
             <ul class="timeline pointer">
-                <li  id ="test" style = "padding-right : 150px; padding-left : 20px">2011</li>
+                <li  style = "padding-right : 150px; padding-left : 20px">2011</li>
                 <li  style = "padding-right : 150px;">2012</li>
                 <li  style = "padding-right : 150px;">2013</li>
                 <li  style = "padding-right : 150px;">2014</li>
