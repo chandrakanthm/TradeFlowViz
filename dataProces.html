@@ -390,9 +390,9 @@ z-index: 9999;">
  -->
         </div>
         <div class="container">
-            <canvas class="col-md-3" style="max-height: 30rem;max-width: 30rem;margin-left: 0rem;margin-top:10rem; " id="m"></canvas>
-            <canvas class="col-md-3 pull-left" style="max-height: 20rem;max-width: 20rem;margin-left: -30rem;margin-top:10rem; " id="piechart"></canvas>
-            <canvas class="col-md-3 pull-right" style="max-height: 20rem;max-width: 20rem;margin-left: 10rem;margin-top:2rem; " id="doughnut"></canvas>
+            <canvas class="col-md-3" style="max-height: 30rem;max-width: 30rem;margin-left: 0rem;margin-top:10rem; z-index:9" id="m"></canvas>
+            <canvas class="col-md-3 pull-left" style="max-height: 25rem;max-width: 25rem;margin-left: -30rem;margin-top:10rem;z-index:9 " id="piechart"></canvas>
+            <canvas class="col-md-3 pull-right" style="max-height: 20rem;max-width: 20rem;margin-left: 10rem;margin-top:2rem; z-index:9" id="doughnut"></canvas>
         </div>
         <!-- <div id="m" style="min-width: 310px; height: 400px; margin: 0 auto"></div> -->
         <div class="col-lg-3 col-md-3 col-sm-12">
@@ -425,7 +425,7 @@ z-index: 9999;">
                         <!-- 3D webgl canvas here -->
                     </div>
                     <!-- </canvas> -->
-                    <img src="images/index.png" style="max-height: 52.8rem;margin-top:-32rem ; margin-left:10rem;pointer-events: none;"></img>
+                    <img src="images/index.png" style="max-height: 52.8rem;margin-top:-37rem ; margin-left:10rem;pointer-events: none;"></img>
                     <img src="glow.png" style="max-height: 80rem;margin-top:-123rem ; margin-left:-6rem;pointer-events: none;z-index: -1"></img>
                     <div class="" style="margin-top: -40rem;">
                         <table id="marker_template" class="marker pull-right" style="left:60rem !important;top:-20rem;font-weight: 1px;color: white;z-index: -90;">
@@ -645,6 +645,16 @@ z-index: 9999;">
                             ],
                             data: data // [12, 19, 3, 17, 28, 24, 7]
                         }]
+
+
+                    },
+                    options: {
+                        legend: {
+                            display: false
+                        },
+                        tooltips: {
+                            enabled: true
+                        }
                     }
                 });
 
@@ -712,7 +722,7 @@ layCountries noPointer">
 
 canvas {
     margin-left: -35rem;
-    margin-top: -25rem;
+    margin-top: -30rem;
     max-width: 1500rem;
     /*margin-left: 0rem; max-width: 60rem; margin-top: 20rem;
 */
