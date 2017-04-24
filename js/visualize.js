@@ -386,7 +386,7 @@ function selectVisualization(linearData, year, countries, exportCategories, impo
     for (var i in mesh.affectedCountries) {
         var countryName = mesh.affectedCountries[i];
         var country = countryData[countryName];
-        attachMarkerToCountry(countryName, country.mapColor);
+        //        attachMarkerToCountry(countryName, country.mapColor);
     }
 
     // console.log( mesh.affectedCountries );
