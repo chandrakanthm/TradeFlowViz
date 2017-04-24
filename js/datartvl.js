@@ -51,7 +51,6 @@ function displayJSON(viewdata) {
                 for (var i = 0; i < data[key].length; i++) {
                     var temp = {};
                     if (data[key][i].commodity == input.commodity) {
-                        alert("1 "+data[key][i].commodity+"2  "+input.commodity)
                         temp.value = data[key][i].val;
                         temp.country = data[key][i].country;
                         array.push(temp);
@@ -60,8 +59,6 @@ function displayJSON(viewdata) {
                     }
                 }
                 console.log(array);
-                alert("countires : "+countries);
-                console.log(titleCase(input.commodity));
                 var selectedCommodity = input.commodity;
                 var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
                 drawbargrph(countries,input.commodity, countriesValue);

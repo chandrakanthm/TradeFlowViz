@@ -436,18 +436,20 @@ z-index: 99;">
             }
 
             function drawbargrph(xlables, barlabelp, bardata_one) {
-                alert(" xlables : "+xlables);
-                alert("barlabelp "+barlabelp);
-                alert("bardata_one "+bardata_one);
+                var bg_color = [];
+                for(var i=0; i<bardata_one.length;i++){
+                    bg_color.push("rgba(4, 207, 194,0.6)");
+                }
                 var ctx = document.getElementById('m').getContext('2d');
                 var myChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: xlables, //(['10', '11', '12', '13', '14', '15', '16'],'oil',[12, 19, 3, 17, 6, 3, 7],'coffee',[2, 29, 5, 5, 2, 3, 10])
+                        labels: xlables,
                         datasets: [{
                             label: barlabelp,
-                            data: bardata_one, //[12, 19, 3, 17, 6, 3, 7],
-                            backgroundColor: ["rgba(4, 207, 194,0.6)"]
+                            data: bardata_one, 
+                            backgroundColor: bg_color,
+                            borderWidth : 1
                         }]
                     },options: {
                         scales: {
@@ -458,6 +460,7 @@ z-index: 99;">
                             }]
                         }
                     }
+                    
                 });
                 console.log('drawing graph');
                 //console.log(input.commodityinput.commodity);
