@@ -42,10 +42,10 @@ function displayJSON(viewdata) {
             var year_arr = ["2011", "2012", "2013", "2014", "2015"];
             var countriesValue ;//= [];
             if (input.partner == "" && input.reporter != "" && input.commodity != "") {
-                countries = [];
-                countriesValue = [];
                 //All Imports: for given Country + Year
                 console.log("case 1");
+                countries = [];
+                countriesValue = [];
                 var key = input.reporter + "" + yr_val;
                 array = [];
                 for (var i = 0; i < data[key].length; i++) {
@@ -75,13 +75,14 @@ function displayJSON(viewdata) {
                 var arr = [key1, key2, key3, key4, key5];
                 var year_arr = ["2011", "2012", "2013", "2014", "2015"];
                 array = [];
+                var allYrs = [];
+                var yearsvalue = [];
                 for (var key = 0; key < arr.length; key++) {
                     if (data[arr[key]] == null) {
                         console.log("no import");
                         continue;
                     }
-                    var allYrs = [];
-                    var yearsvalue = [];
+                    
                     for (var i = 0; i < data[arr[key]].length; i++) {
                         var temp = {};
 
@@ -99,13 +100,18 @@ function displayJSON(viewdata) {
                     }
                 }
                 console.log(array);
+                alert(allYrs+" val "+yearsvalue);
+                if(allYrs.length == 0){
+                allYrs = year_arr;
+                yearsvalue = [0,0,0,0,0];   
+                }
                 var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
                 var selectedCommodity = input.commodity;
                 console.log('generating globe for case2');
                 imade(selectionData.selectedYear, [input.reporter], [selectedCommodity], allCommodities);
                 // selectedCountry = input.reporter;
                 // console.log(selectedCountry.summary.imported.total);
-                drawbargrph(year_arr, selectedCommodity, yearsvalue);
+                drawbargrph(allYrs, selectedCommodity, yearsvalue);
                 // document.getElementById("piechart").style.visibility = "hidden";
 
             } else if (input.commodity == "" && input.reporter != "" && input.partner != "") {
@@ -243,7 +249,7 @@ function displayJSON(viewdata) {
                     }
                 }
                 console.log(titleCase(input.commodity));
-                drawbargrph(countries, input.commodity, countriesValue);
+                drawbargrph(countries,input.commodity, countriesValue);
                 console.log('generating globe for case1');
                 imade(selectionData.selectedYear, [input.reporter], [titleCase(input.commodity)], [titleCase(input.commodity)]);
             } else if (input.partner != "" && input.reporter != "" && input.commodity != "") { // case two : partner is selected
@@ -278,13 +284,17 @@ function displayJSON(viewdata) {
                     }
                 }
                 console.log(array);
+                if(allYrs.length == 0){
+                    allYrs = year_arr;
+                    yearsvalue = [0,0,0,0,0];   
+                }
                 var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
                 var selectedCommodity = input.commodity;
                 console.log('generating globe for case2');
                 imade(selectionData.selectedYear, [input.reporter], [selectedCommodity], allCommodities);
                 // selectedCountry = input.reporter;
                 // console.log(selectedCountry.summary.imported.total);
-                drawbargrph(year_arr, selectedCommodity, yearsvalue);
+                drawbargrph(allYrs, selectedCommodity, yearsvalue);
                 // document.getElementById("piechart").style.visibility = "hidden";
 
 
