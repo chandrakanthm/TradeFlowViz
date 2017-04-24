@@ -17,7 +17,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="js/jquery.fancybox.css" /> -->
     <link rel="stylesheet" href="graphcss/graphstyle.css" type="text/css" media="screen" />
     <link rel="stylesheet" media="screen and (max-height: 770px)" href="css/tablet.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboardms.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="geo-explorer.css" /> -->
 </head>
@@ -27,6 +27,7 @@
 box-shadow: 0 1px 5px rgba(0,0,0,.5);
 color: #fff;
 padding-bottom: 3px;
+max-height: 6rem;
  border-bottom: 2px;
 border-top-color:transparent;
 border-right-color:transparent;
@@ -37,20 +38,21 @@ position: fixed;
 top: 0px;
 width: 100%;
 z-index: 99;">
+        <h3 class="pull-right">UN Commodity <span style="color: #1da0e8">TradeFlow</span></h3>
         <!-- <form name="myForm" action="" method="post">
             Name:
             <input type="text" name="fname">
             <input type="button" value="ss" onclick="imade()">
         </form>-->
-        <form action="" name="myForm2" onsubmit="return false;" method="post">
+        <form style="margin-top: 0rem;" action="" name="myForm2" onsubmit="return false;" method="post">
             <div class="row tools">
                 <div class="col-sm-1">
                     <div class="tool radius" style="padding-left: 2rem;">
                         <div class=" noPointer" id="hudButtons">
-                            <h5>Direction</h5>
+                            <!--    <h5>Direction</h5> -->
                             <!--<input type="name" name="country" class="countryTextInput form-control pointer noMapDrag" style="background: black;color: #1da0e8;" value="UNITED STATES">-->
-                            <select onchange="displayJSON();" id="direction" class="form-control" style="background: black;color: #1da0e8;">
-                                <option></option>
+                            <select onchange="displayJSON();" id="direction" class="form-control" style="border-color:#1da0e8;border-style: solid;border-width: 1px;background: black;color: #1da0e8;">
+                                <option>Direction</option>
                                 <option value="Imports">Imports</option>
                                 <option value="Exports">Exports</option>
                             </select>
@@ -59,10 +61,10 @@ z-index: 99;">
                 </div>
                 <div class="col-sm-1">
                     <div class="tool coordinates">
-                        <h5>Commodity</h5>
+                        <!--   <h5>Commodity</h5> -->
                         <!--<input type="name" step="any" style="background: black;color: #1da0e8;" id="coordinates-lng" name="country2" class="form-control" placeholder="Commodity">-->
-                        <select id="commodity" class="form-control" style="background: black;color: #1da0e8;">
-                            <option></option>
+                        <select id="commodity" class="form-control" style="background: black;color: #1da0e8;border-color:#1da0e8;border-style: solid;border-width: 1px;">
+                            <option>Commodity</option>
                             <option value="coffeee">Coffee</option>
                             <option value="copper">Copper</option>
                             <option value="corn">Corn</option>
@@ -79,10 +81,11 @@ z-index: 99;">
                 </div>
                 <div class="col-sm-1">
                     <div class="tool coordinates">
-                        <h5>Reporter</h5>
+                        <!-- <h5>Reporter</h5>
+ -->
                         <!--<input type="name" step="any" style="background: black;color: #1da0e8;" id="coordinates-lng" class="form-control" placeholder="Commodity">-->
-                        <select id="reporter" class="form-control" style="background: black;color: #1da0e8;">
-                            <option></option>
+                        <select id="reporter" class="form-control" style="background: black;color: #1da0e8;border-color:#1da0e8;border-style: solid;border-width: 1px;">
+                            <option>Reporter</option>
                             <option value="brazil">Brazil</option>
                             <option value="canada">Canada</option>
                             <option value="china">China</option>
@@ -98,10 +101,11 @@ z-index: 99;">
                 </div>
                 <div class="col-sm-1">
                     <div class="tool timeframe">
-                        <h5>Partner</h5>
+                        <!-- <h5>Partner</h5>
+ -->
                         <!--<input type="date" id="timeframe-start" style="background: black;color: #1da0e8;" class="form-control" placeholder="mm/dd/yyyy">-->
-                        <select id="partner" class="form-control" style="background: black;color: #1da0e8;">
-                            <option></option>
+                        <select id="partner" class="form-control" style="background: black;color: #1da0e8;border-color:#1da0e8;border-style: solid;border-width: 1px;" placeholder="Partner">
+                            <option>Partner</option>
                             <option value="brazil">Brazil</option>
                             <option value="canada">Canada</option>
                             <option value="china">China</option>
@@ -118,7 +122,7 @@ z-index: 99;">
                 <div class="col-sm-1">
                     <div class="tool timeframe">
                         <span id="countryText" class="country"></span>
-                        <input onclick="displayJSON();" type="button" id="timeframe-end" style="background: black;color: #1da0e8;" class="form-control" placeholder="Submit" value="Submit">
+                        <input style="margin-top: 0rem;border-color:#1da0e8;border-style: solid;border-width: 1px; min-height: 3rem;min-width: 5rem;background-color: black;color: #1da0e8;" onclick="displayJSON();" type="button" id="timeframe-end" class="  " placeholder="Submit" value="Submit">
                     </div>
                 </div>
                 <div class="col-sm-1">
@@ -127,8 +131,9 @@ z-index: 99;">
                         <i type="button" id="refresh" class="btn fa fa-refresh fa-3"></i> -->
                     </div>
                 </div>
-                <i type="button" style="cursor: pointer; color: white;" class="fa fa-search-plus fa-3 zoomBtn zoomInBtn armsBtn pointer noMapDrag" aria-hidden="true"></i>
-                <i type="button" style="cursor: pointer; color: white;" class="fa fa-search-minus fa-3 zoomBtn zoomOutBtn armsBtn pointer noMapDrag" aria-hidden="true"></i>
+                <!-- <i type="button" style="cursor: pointer; color: white;" class="fa fa-search-plus fa-3 zoomBtn zoomInBtn armsBtn pointer noMapDrag" aria-hidden="true"></i>
+<i type="button" style="cursor: pointer; color: white;" class="fa fa-search-minus fa-3 zoomBtn zoomOutBtn armsBtn pointer noMapDrag" aria-hidden="true"></i>
+ -->
             </div>
         </form>
         </br>
@@ -181,9 +186,16 @@ z-index: 99;">
     <div id="information">
     </div>
 </div>
+ 
  -->
     <div id="zoom">
-        <div class="z" rel="in"></div>
+        <i class="fa fa-square" style="color:rgba(95,198,19,0.6);" aria-hidden="true">'11</i>
+        <i class="fa fa-square" style="color:rgba(234,134,21,0.6);" aria-hidden="true">'12</i>
+        <i class="fa fa-square" style="color: rgba(0,202,255,0.6)" aria-hidden="true">'13</i>
+        <i class="fa fa-square" style="color:rgba(198,134,233,0.6) " aria-hidden="true">'14</i>
+        <i class="fa fa-square" style="color:rgba(46,144,114,0.6)" aria-hidden="true">'15</i>
+        <i class="fa fa-square" style="color:rgba(255,51,69,0.6)" aria-hidden="true">Destination</i>
+        <div class="z" style="margin-top: 2rem;" rel="in"></div>
         <div class="z" rel="out"></div>
         <div class="z" rel="center"></div>
     </div>
@@ -318,10 +330,10 @@ z-index: 99;">
                         width: 500px;
                         font-size: 15px;
                         font-family: 'Roboto';
-                        fill : green;
+                        fill: green;
                     }
                     </style>
-                    <div id="chart svg" >
+                    <div id="chart svg">
                         <svg>
                         </svg>
                     </div>
@@ -387,41 +399,42 @@ z-index: 99;">
             </script>
             <script type="text/javascript" src="geo-explorer.js"></script>
             <script type="text/javascript">
-            function drawSpiralHeatMap(historyData){
+            function drawSpiralHeatMap(historyData) {
                 alert("inside heat map call");
-            
-                    /* Label data */
-                    var countries = ["brazil","canada","china","france","japan","india","mexico","russia","uk","us"];
-                    var years = [];
-                    for(var i = 2011; i < 2016; i++)
-                         years.push(i);
 
-                    /* Create the chart */
-                    var chart = circularHeatChart()
-                        .segmentHeight(10)
-                        .innerRadius(16)
-                        .numSegments(5)
-                        .domain([0, 50000000])
-                        .range(['white', 'blue'])
-                        .segmentLabels(years)
-                        .radialLabels(countries);
-                    
-                    d3.select('#chart svg')
-                        .selectAll('svg')
-                        .data([historyData])
-                        .enter()
-                        .append('svg')
-                        .call(chart);
-                    alert("going out of heat map ");
-//                    d3.select("#chart svg").select("all").on('mouseover', function() {
-//                        var d = d3.select(this).data()[0];
-//                        alert(" d: "+d.value);
-//                    });
-//                    d3.selectAll("#chart svg").on('mouseout', function() {
-//                        d3.select("#info").text('');
-                
-                
+                /* Label data */
+                var countries = ["brazil", "canada", "china", "france", "japan", "india", "mexico", "russia", "uk", "us"];
+                var years = [];
+                for (var i = 2011; i < 2016; i++)
+                    years.push(i);
+
+                /* Create the chart */
+                var chart = circularHeatChart()
+                    .segmentHeight(10)
+                    .innerRadius(16)
+                    .numSegments(5)
+                    .domain([0, 50000000])
+                    .range(['white', 'blue'])
+                    .segmentLabels(years)
+                    .radialLabels(countries);
+
+                d3.select('#chart svg')
+                    .selectAll('svg')
+                    .data([historyData])
+                    .enter()
+                    .append('svg')
+                    .call(chart);
+                alert("going out of heat map ");
+                //                    d3.select("#chart svg").select("all").on('mouseover', function() {
+                //                        var d = d3.select(this).data()[0];
+                //                        alert(" d: "+d.value);
+                //                    });
+                //                    d3.selectAll("#chart svg").on('mouseout', function() {
+                //                        d3.select("#info").text('');
+
+
             }
+
             function drawbargrph(xlables, barlabelp, bardata_one, barlabels, bardata_two) {
                 var ctx = document.getElementById('m').getContext('2d');
                 var myChart = new Chart(ctx, {

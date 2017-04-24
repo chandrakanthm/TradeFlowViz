@@ -21,7 +21,7 @@ function displayFormData() {
     return inObj;
 };
 
-function displayJSON() {
+function displayJSON(viewdata) {
     var input = displayFormData();
 
     //var yr_val = "2013"; //selectionData.selectedYear;
@@ -168,16 +168,16 @@ function displayJSON() {
                 }
                 drawPiegrph(commodities, commoditiesValues, 1);
                 //alert(array.length);
-            }else if(input.commodity != "" && input.reporter == "" && input.partner == "" && input.direction !=""){
-                
-               // ============= for a single commodity we are showing diiferent country either expor 
+            } else if (input.commodity != "" && input.reporter == "" && input.partner == "" && input.direction != "") {
+
+                // ============= for a single commodity we are showing diiferent country either expor 
                 // or imort contribution for every year
                 console.log("case 5");
-                
-                var countrylist = ["brazil","canada","china","france","japan","india","mexico","russia","uk","us"];
+
+                var countrylist = ["brazil", "canada", "china", "france", "japan", "india", "mexico", "russia", "uk", "us"];
                 var array_spiral = [];
-                for(var cont=0 ; cont<countrylist.length; cont++){
-                
+                for (var cont = 0; cont < countrylist.length; cont++) {
+
                     var key1 = countrylist[cont] + "2011";
                     var key2 = countrylist[cont] + "2012";
                     var key3 = countrylist[cont] + "2013";
@@ -185,7 +185,7 @@ function displayJSON() {
                     var key5 = countrylist[cont] + "2015";
                     var arr = [key1, key2, key3, key4, key5];
                     var year_arr = ["2011", "2012", "2013", "2014", "2015"];
-                
+
                     for (var key = 0; key < arr.length; key++) {
                         if (data[arr[key]] == null) {
                             console.log("no import");
@@ -200,11 +200,11 @@ function displayJSON() {
                         }
                         array_spiral.push(val);
                     }
-                
+
                 }
                 drawSpiralHeatMap(array_spiral);
-    
-               // ==============
+
+                // ==============
             }
             console.log("year : " + selectionData.selectedYear);
             console.log(commodities);
@@ -347,15 +347,15 @@ function displayJSON() {
                 }
                 drawPiegrph(commodities, commoditiesValues, 1);
                 //alert(array.length);
-            }else if(input.commodity != "" && input.reporter == "" && input.partner == "" && input.direction !=""){
-                
-               // ============= for a single commodity we are showing diiferent country either expor 
+            } else if (input.commodity != "" && input.reporter == "" && input.partner == "" && input.direction != "") {
+
+                // ============= for a single commodity we are showing diiferent country either expor 
                 // or imort contribution for every year
                 console.log("case 5");
-                var countrylist = ["brazil","canada","china","france","japan","india","mexico","russia","uk","us"];
+                var countrylist = ["brazil", "canada", "china", "france", "japan", "india", "mexico", "russia", "uk", "us"];
                 var array_spiral = [];
-                for(var cont=0 ; cont<countrylist.length; cont++){
-                
+                for (var cont = 0; cont < countrylist.length; cont++) {
+
                     var key1 = countrylist[cont] + "2011";
                     var key2 = countrylist[cont] + "2012";
                     var key3 = countrylist[cont] + "2013";
@@ -363,7 +363,7 @@ function displayJSON() {
                     var key5 = countrylist[cont] + "2015";
                     var arr = [key1, key2, key3, key4, key5];
                     var year_arr = ["2011", "2012", "2013", "2014", "2015"];
-                
+
                     for (var key = 0; key < arr.length; key++) {
                         if (data[arr[key]] == null) {
                             console.log("no import");
@@ -378,11 +378,11 @@ function displayJSON() {
                         }
                         array_spiral.push(val);
                     }
-                
+
                 }
                 drawSpiralHeatMap(array_spiral);
-    
-               // ==============
+
+                // ==============
             }
             console.log("year : " + selectionData.selectedYear);
             console.log(array);
