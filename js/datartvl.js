@@ -27,7 +27,8 @@ function displayJSON() {
     //var yr_val = "2013"; //selectionData.selectedYear;
     var yr_val = selectionData.selectedYear;
     console.log(yr_val);
-
+    var svg = d3.select("#chart svg");
+    svg.select("*").remove();
     if (input.direction == "Exports") {
 
 
@@ -167,11 +168,12 @@ function displayJSON() {
                 }
                 drawPiegrph(commodities, commoditiesValues, 1);
                 //alert(array.length);
-            }else if(input.commodity != "" && input.reporter == "" && input.partner == ""){
+            }else if(input.commodity != "" && input.reporter == "" && input.partner == "" && input.direction !=""){
                 
                // ============= for a single commodity we are showing diiferent country either expor 
                 // or imort contribution for every year
                 console.log("case 5");
+                
                 var countrylist = ["brazil","canada","china","france","japan","india","mexico","russia","uk","us"];
                 var array_spiral = [];
                 for(var cont=0 ; cont<countrylist.length; cont++){
@@ -345,7 +347,7 @@ function displayJSON() {
                 }
                 drawPiegrph(commodities, commoditiesValues, 1);
                 //alert(array.length);
-            }else if(input.commodity != "" && input.reporter == "" && input.partner == ""){
+            }else if(input.commodity != "" && input.reporter == "" && input.partner == "" && input.direction !=""){
                 
                // ============= for a single commodity we are showing diiferent country either expor 
                 // or imort contribution for every year
