@@ -422,7 +422,10 @@ z-index: 99;">
                 
                 
             }
-            function drawbargrph(xlables, barlabelp, bardata_one, barlabels, bardata_two) {
+            function drawbargrph(xlables, barlabelp, bardata_one) {
+                alert(" xlables : "+xlables);
+                alert("barlabelp "+barlabelp);
+                alert("bardata_one "+bardata_one);
                 var ctx = document.getElementById('m').getContext('2d');
                 var myChart = new Chart(ctx, {
                     type: 'bar',
@@ -431,13 +434,16 @@ z-index: 99;">
                         datasets: [{
                             label: barlabelp,
                             data: bardata_one, //[12, 19, 3, 17, 6, 3, 7],
-                            backgroundColor: "rgba(4, 207, 194,0.6)"
-                        }, {
-                            label: barlabels,
-                            data: bardata_two,
-                            //[2, 29, 5, 5, 2, 3, 10],
-                            backgroundColor: "rgba(18, 56, 89,0.6)"
+                            backgroundColor: ["rgba(4, 207, 194,0.6)"]
                         }]
+                    },options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
                     }
                 });
                 console.log('drawing graph');

@@ -13,16 +13,16 @@ yrs = ["2011","2012","2013","2014","2015"]
 dataTable ={"284330":"Gold","150810":"crude","09":"coffee","1109":"wheat","52":"cotton","071040":"corn","17":"sugar","28432":"silver","7406":"copper","271111":"natural gas"};
 file_list = []
 start = time.time()
-urls = ["http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=76&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=124&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=156&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=251&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=392&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=699&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=484&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=643&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=826&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
-       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=834&rg=all&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json"]
+urls = ["http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=76&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=124&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=156&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=251&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=392&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=699&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=484&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=643&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=826&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json",
+       "http://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2015,2014,2013,2012,2011&r=all&p=834&rg=1&cc=284330,150810,09,1109,52,071040,17,28432,7406,271111&fmt=json"]
 
 
 def fetch_url(url, i):

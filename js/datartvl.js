@@ -33,15 +33,17 @@ function displayJSON() {
 
 
         console.log("calling for exports ");
-        readTextFile("./data_pre/Data.json", function(text) {
+        readTextFile("./data_pre/exportData.json", function(text) {
             var data = JSON.parse(text);
             //console.log(data);
             // case 1
             var array;
-            var countries = [];
+            var countries ;//= [];
             var year_arr = ["2011", "2012", "2013", "2014", "2015"];
-            var countriesValue = [];
+            var countriesValue ;//= [];
             if (input.partner == "" && input.reporter != "" && input.commodity != "") {
+                countries = [];
+                countriesValue = [];
                 //All Imports: for given Country + Year
                 console.log("case 1");
                 var key = input.reporter + "" + yr_val;
@@ -49,6 +51,7 @@ function displayJSON() {
                 for (var i = 0; i < data[key].length; i++) {
                     var temp = {};
                     if (data[key][i].commodity == input.commodity) {
+                        alert("1 "+data[key][i].commodity+"2  "+input.commodity)
                         temp.value = data[key][i].val;
                         temp.country = data[key][i].country;
                         array.push(temp);
@@ -57,11 +60,11 @@ function displayJSON() {
                     }
                 }
                 console.log(array);
-
+                alert("countires : "+countries);
                 console.log(titleCase(input.commodity));
                 var selectedCommodity = input.commodity;
                 var allCommodities = ['Coffee', 'Copper', 'Corn', 'Cotton', 'Crude Oil', 'Gold', 'Silver', 'Sugar', 'Wheat'];
-                drawbargrph(countries, input.commodity, countriesValue);
+                drawbargrph(countries,input.commodity, countriesValue);
                 console.log('generating globe for case1');
                 imade(selectionData.selectedYear, [input.reporter], [selectedCommodity]);
                 //imade(selectionData.selectedYear, [input.reporter], [titleCase(input.commodity)], [titleCase(input.commodity)]);
