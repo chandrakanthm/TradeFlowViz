@@ -392,10 +392,11 @@ function initScene() {
     masterContainer.addEventListener('mousewheel', onMouseWheel, false);
 
     //  firefox 
-    masterContainer.addEventListener('DOMMouseScroll', function(e) {
-        var evt = window.event || e; //equalize event object
-        onMouseWheel(evt);
-    }, false);
+    // masterContainer.addEventListener('DOMMouseScroll', function(e) {
+    //     var evt = window.event || e; //equalize event object
+    //     onMouseWheel(evt);
+    // }, false);
+
 
     document.addEventListener('keydown', onKeyDown, false);
 

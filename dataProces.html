@@ -208,31 +208,12 @@ z-index: 99;">
         </div>
         <div class="container">
             <canvas class="col-md-3" style="max-height: 40rem;max-width: 40rem;margin-left: -5rem;margin-top:11rem; z-index:9" id="m"></canvas>
-            <canvas class="col-md-3 pull-left" style="max-height: 25rem;max-width: 25rem;margin-left: -20rem;margin-top:10rem;z-index:9 " id="piechart"></canvas>
             <canvas class="col-md-3 pull-right" style="max-height: 20rem;max-width: 20rem;margin-left: 10rem;margin-top:11rem; z-index:9" id="doughnut"></canvas>
         </div>
         <!-- <div id="m" style="min-width: 310px; height: 400px; margin: 0 auto"></div> -->
         <div class="col-lg-3 col-md-3 col-sm-12">
-            <div class="panel medium-panel col-sm-12 col-md-12 animated zoomIn" style="color:white;background-color: rgba(0, 0, 0, 0);
-                                z-index: -3;
-                                        border: none;
-                                       margin-top: 10rem;
-                                        border-radius: 5px;
-                                        position: relative;
-                                        margin-bottom: 24px;
-                                        color: white;
-                                        margin-left: -1rem;
-                                        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
-                                            height: 20rem;" zoom-in="">
-                <style>
-                #chart svg {
-                    height: 600px;
-                    width: 600px;
-                }
-                </style>
-                <div id="chart">
-                    <svg></svg>
-                </div>
+            <div class="pie">
+                <canvas class="col-md-3 pull-left" style="max-height: 25rem;max-width: 28rem;margin-left: 10rem;margin-top:8rem;z-index:9 " id="piechart"></canvas>
             </div>
         </div>
         <div id="visualization">
@@ -243,7 +224,7 @@ z-index: 99;">
                         <!-- 3D webgl canvas here -->
                     </div>
                     <!-- </canvas> -->
-<!--                    <img src="images/index.png" style="max-height: 52.3rem;margin-top:-30rem ; margin-left:10rem;pointer-events: none;"></img>-->
+                    <img src="images/index.png" style="max-height: 52.3rem;margin-top:-29rem ; margin-left:10rem;pointer-events: none;"></img>
                     <img src="glow.png" style="max-height: 80rem;margin-top:-123rem ; margin-left:-6rem;pointer-events: none;z-index: -1"></img>
                     <div class="" style="margin-top: -40rem;">
                         <table id="marker_template" class="marker pull-right" style="left:60rem !important;top:-20rem;font-weight: 1px;color: white;z-index: -90;">
@@ -331,8 +312,8 @@ z-index: 99;">
                         padding-left: 25px;
                         font-size: 15px;
                         font-family: 'Roboto';
-                        fill : rgba(23, 180, 194, 0.9); 
-                    } 
+                        fill: rgba(23, 180, 194, 0.9);
+                    }
                     </style>
                     <div id="chart svg">
                         <svg>
@@ -400,9 +381,9 @@ z-index: 99;">
             </script>
             <script type="text/javascript" src="geo-explorer.js"></script>
             <script type="text/javascript">
-            function drawSpiralHeatMap(historyData,max,min) {
-                alert("max and mind : "+max+" , "+min);
-                
+            function drawSpiralHeatMap(historyData, max, min) {
+                alert("max and mind : " + max + " , " + min);
+
                 var countries = ["brazil", "canada", "china", "france", "japan", "india", "mexico", "russia", "uk", "us"];
                 var years = [];
                 for (var i = 2011; i < 2016; i++)
@@ -434,13 +415,13 @@ z-index: 99;">
 
 
             }
-                
-            
 
-            function drawbargrph(xlables, barlabelp, bardata_one,labels) {
-                
+
+
+            function drawbargrph(xlables, barlabelp, bardata_one, labels) {
+
                 var bg_color = [];
-                for(var i=0; i<bardata_one.length;i++){
+                for (var i = 0; i < bardata_one.length; i++) {
                     bg_color.push("rgba(4, 207, 194,0.6)");
                 }
                 var ctx = document.getElementById('m').getContext('2d');
@@ -450,30 +431,31 @@ z-index: 99;">
                         labels: xlables,
                         datasets: [{
                             label: barlabelp,
-                            data: bardata_one, 
+                            data: bardata_one,
                             backgroundColor: bg_color,
-                            borderWidth : 1
+                            borderWidth: 1
                         }]
-                    },options: {
+                    },
+                    options: {
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                    beginAtZero:true
+                                    beginAtZero: true
                                 },
                                 scaleLabel: {
-                                display: true,
-                                labelString: 'NetValue'
-                              }
+                                    display: true,
+                                    labelString: 'NetValue'
+                                }
                             }],
                             xAxes: [{
                                 scaleLabel: {
-                                display: true,
-                                labelString: labels
-                              }
+                                    display: true,
+                                    labelString: labels
+                                }
                             }]
                         }
                     }
-                    
+
                 });
                 console.log('drawing graph');
                 //console.log(input.commodityinput.commodity);
@@ -504,21 +486,22 @@ z-index: 99;">
             }
             </script>
             <script type="text/javascript">
-            function drawPiegrph(labels, data, alfa) {
+            function drawPiegrph(labels, data) {
                 var colors = [
-                                "rgb(215, 48, 39)",
-                                "rgb(244, 109, 67)",
-                                "rgb(253, 174, 97)",
-                                "rgb(254, 224, 144)",
-                                "rgb(255, 255, 191)",
-                                "rgb(224, 243, 248)",
-                                "rgb(171, 217, 233)",
-                                "rgb(116, 173, 209)",
-                                "rgb(69, 117, 180)",
-                                "rgb(49, 54, 149)"
-                            ];
+                    "rgba(215, 48, 39,0.8)",
+                    "rgba(244, 109, 67,0.8)",
+                    "rgba(253, 174, 97,0.8)",
+                    "rgba(254, 224, 144,0.8)",
+                    "rgba(255, 255, 191,0.8)",
+                    "rgba(224, 243, 248,0.8)",
+                    "rgba(171, 217, 233,0.8)",
+                    "rgba(116, 173, 209,0.8)",
+                    "rgba(69, 117, 180,0.8)",
+                    "rgba(49, 54, 149,0.8)",
+                    "rgba(80, 48, 39,0.8)"
+                ];
                 var bg_color = [];
-                for(var i=0; i<labels.length ; i++){
+                for (var i = 0; i < labels.length; i++) {
                     bg_color.push(colors[i]);
                 }
                 var ctx = document.getElementById("piechart").getContext('2d');
@@ -528,14 +511,16 @@ z-index: 99;">
                         labels: labels, //["M", "T", "W", "T", "F", "S", "S"],
                         datasets: [{
                             backgroundColor: bg_color,
-                            data: data // [12, 19, 3, 17, 28, 24, 7]
+                            data: data, // [12, 19, 3, 17, 28, 24, 7]
+                            borderWidth: 1
                         }]
 
 
                     },
                     options: {
                         legend: {
-                            display: true
+                            display: true,
+                            onclick: console.log('hi')
                         },
                         tooltips: {
                             enabled: true
