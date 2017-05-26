@@ -1,3 +1,5 @@
 # GlobeData
 Interactive Globe: Small Arms Imports &amp; Exports<br/>
-Demo:http://pvis.github.io/GlobeData. 
+Demo:https://www.youtube.com/watch?v=kG-EHCnwyec&feature=youtu.be
+# Herokuapp
+http://tradedataviz.herokuapp.com/dataProces.html
